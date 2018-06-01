@@ -1,5 +1,6 @@
 package com.company;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +10,7 @@ public class Main {
     private static double numWaterGallon=0;
 
     public static void main(String[] args) {
+        DecimalFormat df = new DecimalFormat("o.##");
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter the roof width: ");
         width = in.nextDouble();
@@ -17,7 +19,7 @@ public class Main {
         System.out.println("Please enter the number of rainfall in inch: ");
         numOfInchRainfall = in.nextInt();
         numWaterGallon = CalculateRufoffWater(width, height, numOfInchRainfall);
-        System.out.println("The amount of run off water in gallon is "+ numWaterGallon);
+        System.out.println("The amount of runoff water in gallon is "+ df.format(numWaterGallon));
     }
 
 
