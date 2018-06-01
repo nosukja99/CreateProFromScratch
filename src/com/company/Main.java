@@ -10,15 +10,16 @@ public class Main {
     private static double numWaterGallon=0;
 
     public static void main(String[] args) {
-        DecimalFormat df = new DecimalFormat("o.##");
+        DecimalFormat df = new DecimalFormat("0.##");
         Scanner in = new Scanner(System.in);
-        System.out.println("Please enter the roof width: ");
+        System.out.println("Please enter the roof width in foot: ");
         width = in.nextDouble();
-        System.out.println("Please enter the roof height: ");
+        System.out.println("Please enter the roof height in foot: ");
         height = in.nextDouble();
         System.out.println("Please enter the number of rainfall in inch: ");
         numOfInchRainfall = in.nextInt();
         numWaterGallon = CalculateRufoffWater(width, height, numOfInchRainfall);
+        System.out.println(numWaterGallon);
         System.out.println("The amount of runoff water in gallon is "+ df.format(numWaterGallon));
     }
 
